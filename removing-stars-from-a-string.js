@@ -1,7 +1,7 @@
 info = {
   descriptionUrl:
-    'https://leetcode.com/problems/removing-stars-from-a-string/description/',
-  createdAt: '2023-04-12',
+    "https://leetcode.com/problems/removing-stars-from-a-string/description/",
+  createdAt: "2023-04-12",
   updatedAt: null,
 };
 
@@ -13,11 +13,11 @@ info = {
 function removeStars(s) {
   var arr = [];
   for (let i of s) {
-    arr.push(i);
-    if (i === '*' && arr !== []) {
+    if (i === "*" && arr !== []) {
       arr.pop();
-      arr.pop();
+    } else {
+      arr.push(i);
     }
   }
-  return arr.join('');
+  return arr.join("");
 }
