@@ -1,6 +1,6 @@
 info = {
   descriptionUrl:
-    'https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/submissions/',
+    'https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/description/',
   createdAt: '2023-04-17',
   updatedAt: null,
 };
