@@ -18,17 +18,21 @@ function mergeAlternately(word1, word2) {
   let word2Status = true;
 
   while (word1Status || word2Status) {
-    if (discriminateWord(word1Arr)) {
-      word1Head = word1Arr.shift();
-      merged.push(word1Head);
-    } else {
-      word1Status = false;
+    if (word1Status) {
+      if (discriminateWord(word1Arr)) {
+        word1Head = word1Arr.shift();
+        merged.push(word1Head);
+      } else {
+        word1Status = false;
+      }
     }
-    if (discriminateWord(word2Arr)) {
-      word2Head = word2Arr.shift();
-      merged.push(word2Head);
-    } else {
-      word2Status = false;
+    if (word2Status) {
+      if (discriminateWord(word2Arr)) {
+        word2Head = word2Arr.shift();
+        merged.push(word2Head);
+      } else {
+        word2Status = false;
+      }
     }
   }
   return merged.join('');
