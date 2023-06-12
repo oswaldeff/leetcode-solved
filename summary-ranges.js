@@ -1,7 +1,7 @@
 info = {
   descriptionUrl: "https://leetcode.com/problems/summary-ranges/description/",
   createdAt: "2023-06-12",
-  updatedAt: null,
+  updatedAt: "2023-06-12",
 };
 
 /**
@@ -17,16 +17,11 @@ const summaryRanges = (nums) => {
     return result;
   }
 
-  for (let num of nums) {
-    if (num === nums[0]) {
-      continue;
+  for (let num of nums.slice(1, nums.length)) {
+    if (num === b + 1) {
+      b = num;
     } else {
-      if (num === b + 1) {
-        b = num;
-      } else {
-        result.push(makeArrowExpression(a, b));
-      }
-
+      result.push(makeArrowExpression(a, b));
       a = num;
       b = num;
     }
@@ -41,6 +36,6 @@ const makeArrowExpression = (a, b) => {
   if (a !== b) {
     return `${a}->${b}`;
   } else {
-    return `${b}`;
+    return `${a}`;
   }
 };
